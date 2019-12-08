@@ -9,7 +9,7 @@
           "type": "address"
         },
         {
-          "name": "value",
+          "name": "amount",
           "type": "uint256"
         }
       ],
@@ -281,13 +281,19 @@
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "import \"openzeppelin-solidity/contracts/token/ERC20/ERC20.sol\";\n\ncontract ERC677 is ERC20 {\n    event Transfer(address indexed from, address indexed to, uint value, bytes data);\n    function transferAndCall(address, uint, bytes calldata) external returns (bool);\n}\n\ncontract IBurnableMintableERC677Token is ERC677 {\n    function mint(address, uint256) public returns (bool);\n    function burn(uint256 _value) public;\n    function claimTokens(address _token, address _to) public;\n}\n\ncontract ERC677Receiver {\n    function onTokenTransfer(address _from, uint _value, bytes calldata _data) external returns(bool);\n}\n",
-  "sourcePath": "/Users/yjiang/git/test/DoubleOrNothing/smart-contracts/contracts/ERC677Interface.sol",
+  "sourcePath": "/root/DoubleOrNothing/smart-contracts/contracts/ERC677Interface.sol",
   "ast": {
-    "absolutePath": "/Users/yjiang/git/test/DoubleOrNothing/smart-contracts/contracts/ERC677Interface.sol",
+    "absolutePath": "/root/DoubleOrNothing/smart-contracts/contracts/ERC677Interface.sol",
     "exportedSymbols": {
-      "ERC677": [566],
-      "ERC677Receiver": [602],
-      "IBurnableMintableERC677Token": [590]
+      "ERC677": [
+        566
+      ],
+      "ERC677Receiver": [
+        602
+      ],
+      "IBurnableMintableERC677Token": [
+        590
+      ]
     },
     "id": 603,
     "nodeType": "SourceUnit",
@@ -298,7 +304,7 @@
         "id": 542,
         "nodeType": "ImportDirective",
         "scope": 603,
-        "sourceUnit": 1981,
+        "sourceUnit": 2073,
         "src": "0:63:1",
         "symbolAliases": [],
         "unitAlias": ""
@@ -312,10 +318,10 @@
               "id": 543,
               "name": "ERC20",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 1980,
+              "referencedDeclaration": 2072,
               "src": "84:5:1",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ERC20_$1980",
+                "typeIdentifier": "t_contract$_ERC20_$2072",
                 "typeString": "contract ERC20"
               }
             },
@@ -324,12 +330,21 @@
             "src": "84:5:1"
           }
         ],
-        "contractDependencies": [1980, 2049],
+        "contractDependencies": [
+          1366,
+          2072,
+          2141
+        ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": false,
         "id": 566,
-        "linearizedBaseContracts": [566, 1980, 2049],
+        "linearizedBaseContracts": [
+          566,
+          2072,
+          2141,
+          1366
+        ],
         "name": "ERC677",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -617,12 +632,23 @@
             "src": "307:6:1"
           }
         ],
-        "contractDependencies": [566, 1980, 2049],
+        "contractDependencies": [
+          566,
+          1366,
+          2072,
+          2141
+        ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": false,
         "id": 590,
-        "linearizedBaseContracts": [590, 566, 1980, 2049],
+        "linearizedBaseContracts": [
+          590,
+          566,
+          2072,
+          2141,
+          1366
+        ],
         "name": "IBurnableMintableERC677Token",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -881,7 +907,9 @@
         "documentation": null,
         "fullyImplemented": false,
         "id": 602,
-        "linearizedBaseContracts": [602],
+        "linearizedBaseContracts": [
+          602
+        ],
         "name": "ERC677Receiver",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -1027,11 +1055,17 @@
     "src": "0:613:1"
   },
   "legacyAST": {
-    "absolutePath": "/Users/yjiang/git/test/DoubleOrNothing/smart-contracts/contracts/ERC677Interface.sol",
+    "absolutePath": "/root/DoubleOrNothing/smart-contracts/contracts/ERC677Interface.sol",
     "exportedSymbols": {
-      "ERC677": [566],
-      "ERC677Receiver": [602],
-      "IBurnableMintableERC677Token": [590]
+      "ERC677": [
+        566
+      ],
+      "ERC677Receiver": [
+        602
+      ],
+      "IBurnableMintableERC677Token": [
+        590
+      ]
     },
     "id": 603,
     "nodeType": "SourceUnit",
@@ -1042,7 +1076,7 @@
         "id": 542,
         "nodeType": "ImportDirective",
         "scope": 603,
-        "sourceUnit": 1981,
+        "sourceUnit": 2073,
         "src": "0:63:1",
         "symbolAliases": [],
         "unitAlias": ""
@@ -1056,10 +1090,10 @@
               "id": 543,
               "name": "ERC20",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 1980,
+              "referencedDeclaration": 2072,
               "src": "84:5:1",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ERC20_$1980",
+                "typeIdentifier": "t_contract$_ERC20_$2072",
                 "typeString": "contract ERC20"
               }
             },
@@ -1068,12 +1102,21 @@
             "src": "84:5:1"
           }
         ],
-        "contractDependencies": [1980, 2049],
+        "contractDependencies": [
+          1366,
+          2072,
+          2141
+        ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": false,
         "id": 566,
-        "linearizedBaseContracts": [566, 1980, 2049],
+        "linearizedBaseContracts": [
+          566,
+          2072,
+          2141,
+          1366
+        ],
         "name": "ERC677",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -1361,12 +1404,23 @@
             "src": "307:6:1"
           }
         ],
-        "contractDependencies": [566, 1980, 2049],
+        "contractDependencies": [
+          566,
+          1366,
+          2072,
+          2141
+        ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": false,
         "id": 590,
-        "linearizedBaseContracts": [590, 566, 1980, 2049],
+        "linearizedBaseContracts": [
+          590,
+          566,
+          2072,
+          2141,
+          1366
+        ],
         "name": "IBurnableMintableERC677Token",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -1625,7 +1679,9 @@
         "documentation": null,
         "fullyImplemented": false,
         "id": 602,
-        "linearizedBaseContracts": [602],
+        "linearizedBaseContracts": [
+          602
+        ],
         "name": "ERC677Receiver",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -1775,33 +1831,33 @@
     "version": "0.5.0+commit.1d4f565a.Emscripten.clang"
   },
   "networks": {},
-  "schemaVersion": "3.0.11",
-  "updatedAt": "2019-08-29T08:01:38.961Z",
+  "schemaVersion": "3.0.19",
+  "updatedAt": "2019-12-08T19:49:18.145Z",
   "devdoc": {
     "methods": {
       "allowance(address,address)": {
-        "details": "See `IERC20.allowance`."
+        "details": "See {IERC20-allowance}."
       },
       "approve(address,uint256)": {
-        "details": "See `IERC20.approve`.     * Requirements:     * - `spender` cannot be the zero address."
+        "details": "See {IERC20-approve}.     * Requirements:     * - `spender` cannot be the zero address."
       },
       "balanceOf(address)": {
-        "details": "See `IERC20.balanceOf`."
+        "details": "See {IERC20-balanceOf}."
       },
       "decreaseAllowance(address,uint256)": {
-        "details": "Atomically decreases the allowance granted to `spender` by the caller.     * This is an alternative to `approve` that can be used as a mitigation for problems described in `IERC20.approve`.     * Emits an `Approval` event indicating the updated allowance.     * Requirements:     * - `spender` cannot be the zero address. - `spender` must have allowance for the caller of at least `subtractedValue`."
+        "details": "Atomically decreases the allowance granted to `spender` by the caller.     * This is an alternative to {approve} that can be used as a mitigation for problems described in {IERC20-approve}.     * Emits an {Approval} event indicating the updated allowance.     * Requirements:     * - `spender` cannot be the zero address. - `spender` must have allowance for the caller of at least `subtractedValue`."
       },
       "increaseAllowance(address,uint256)": {
-        "details": "Atomically increases the allowance granted to `spender` by the caller.     * This is an alternative to `approve` that can be used as a mitigation for problems described in `IERC20.approve`.     * Emits an `Approval` event indicating the updated allowance.     * Requirements:     * - `spender` cannot be the zero address."
+        "details": "Atomically increases the allowance granted to `spender` by the caller.     * This is an alternative to {approve} that can be used as a mitigation for problems described in {IERC20-approve}.     * Emits an {Approval} event indicating the updated allowance.     * Requirements:     * - `spender` cannot be the zero address."
       },
       "totalSupply()": {
-        "details": "See `IERC20.totalSupply`."
+        "details": "See {IERC20-totalSupply}."
       },
       "transfer(address,uint256)": {
-        "details": "See `IERC20.transfer`.     * Requirements:     * - `recipient` cannot be the zero address. - the caller must have a balance of at least `amount`."
+        "details": "See {IERC20-transfer}.     * Requirements:     * - `recipient` cannot be the zero address. - the caller must have a balance of at least `amount`."
       },
       "transferFrom(address,address,uint256)": {
-        "details": "See `IERC20.transferFrom`.     * Emits an `Approval` event indicating the updated allowance. This is not required by the EIP. See the note at the beginning of `ERC20`;     * Requirements: - `sender` and `recipient` cannot be the zero address. - `sender` must have a balance of at least `value`. - the caller must have allowance for `sender`'s tokens of at least `amount`."
+        "details": "See {IERC20-transferFrom}.     * Emits an {Approval} event indicating the updated allowance. This is not required by the EIP. See the note at the beginning of {ERC20};     * Requirements: - `sender` and `recipient` cannot be the zero address. - `sender` must have a balance of at least `amount`. - the caller must have allowance for `sender`'s tokens of at least `amount`."
       }
     }
   },
